@@ -1,0 +1,76 @@
+<!-- 
+      weibolists.html
+      <thinksns.m>
+      
+      Created by xiaolong on 2016-03-23.
+      Copyright 2016 xiaolong. All rights reserved.
+ -->
+ 
+<ion-view view-title="{{ uname }}">	
+	
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-ios-personadd-outline" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-ios-plus-outline" ng-click="NewWeibo()">       	
+        </button>
+      </ion-nav-buttons>
+  <ion-content>
+  	<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <div class="list card weibolist" ng-repeat="data in weibolists">
+
+        <div class="item item-avatar">
+          <img ng-src="{{ data.avatar_small }}" class="weibolists-avatar">
+          <h2>{{ data.uname }}&nbsp;<img ng-src="{{data.user_gicon.user_group_icon_url}}" style="vertical-align: bottom;"></h2>
+          <p>{{data.ctime}}  来自{{data.from}}</p>
+        </div>
+
+        <div class="item item-image" style="text-align: left;">
+        	<p ng-bind-html="data.content" style="padding-bottom: 5px" class="text weibotext"></p>
+        	
+        	
+        	<div class="img row" style="padding:0;padding-left:10px"  ng-if="data.attach">
+        		 <img ng-src="{{img.attach_small}}"  ng-if="img.attach_small" class="col col-width-100" ng-repeat="img in data.attach">
+        	</div>
+        	
+        	<div class="api_source" ng-if="data.api_source.title">
+        		<div class="havimg" style="padding:10px" ng-if="data.api_source.pic_url_small">        		   
+        		 	  <img ng-src="{{data.api_source.pic_url_small}}"   class="api_source_img">        		  
+        		      <h2  class="api_source_p">{{data.api_source.title}}</h2>
+        		      <p  class="api_source_content">{{data.api_source.content}}</p>
+        	    </div>
+        	    <div class="" style="padding:10px;padding-left:0"  ng-if="!data.api_source.pic_url_small"> 
+        	    	      <h2  class="api_source_p">{{data.api_source.title}}</h2>
+        		      <p  class="api_source_content">{{data.api_source.content}}</p>
+        	    </div>
+        	</div>
+        	
+        	
+        	
+        	<div class="api_source" ng-if="data.transpond_id">
+        		<div class="havimg" ng-if="data.transpond_data.attach">        		   
+        		 	  <img ng-src="{{data.transpond_data.attach[0].attach_middle_box}}"   class="api_source_img">        		  
+        		      <h2  class="api_source_p" style="font-size:1rem;color:#333">{{data.transpond_data.uname}}<em>{{data.transpond_data.ctime}}</em></h2>
+        		      <p  class="api_source_content">{{data.transpond_data.content}}</p>
+        	    </div>
+        	    <div style="padding:10px" ng-if="!data.transpond_data.attach"> 
+        		      <h2  class="api_source_p" style="font-size:1rem;color:#333">{{data.transpond_data.uname}}<em>{{data.transpond_data.ctime}}</em></h2>        	    	      <h2  class="api_source_p">{{data.api_source.title}}</h2>
+        		      <p  class="transpond_data_content" style="white-space: normal;p">{{data.transpond_data.content}}</p>
+        	    </div>
+        	</div>
+        	
+        	
+        	
+          
+        </div>
+
+        <div class="row action-ion">
+          <div class="col col-33" ng-click="d()"><i class="ion ion-arrow-swap"></i><em ng-if="(data.repost_count==0)">转发</em><em ng-if="(data.repost_count>0)">{{data.repost_count}}</em></div>
+          <div class="col col-33"><i class="ion ion-ios-chatbubble-outline"></i><em ng-if="(data.comment_all_count==0)">评论</em><em ng-if="(data.comment_all_count>0)">{{data.comment_all_count}}</em></div>   
+          <div class="col col-33"><i class="ion ion-ios-heart-outline"></i><em ng-if="(data.digg_count==0)">赞</em><em ng-if="(data.digg_count>0)">{{data.digg_count}}</em></div>   
+        </div>
+
+      </div>
+  </ion-content>
+</ion-view>

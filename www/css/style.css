@@ -1,0 +1,53 @@
+/* Empty. Add your own CSS if you like */
+[nav-bar-transition="ios"] [nav-bar="active"] .bar, [nav-bar-transition="ios"] [nav-bar="entering"] .bar{ background:#1C242E;box-shadow:0 1px 3px rgba(0, 0, 0, 0.3)}
+.bar.bar-stable .title,.bar-stable .button.button-icon{color:#eee}
+.tabs-color-positive .tab-item.tab-item-active, .tabs-color-positive .tab-item.active, .tabs-color-positive .tab-item.activated{color:#1C242E}
+.tabs-color-positive .tab-item{color:rgba(8, 18, 36, 0.4);}
+.bar-header{background:#1C242E;box-shadow:0 1px 3px rgba(0, 0, 0, 0.3)}
+.loginBg{ background: url('../img/logo.png') #fff center no-repeat; height:30px;width:115px;margin:0 auto;padding:50px;}
+.loginBgtext{text-align: center;color:#999;}
+.scroll-content{background: #f2f2f2;}
+.card, .list-inset{margin:10px 0 0 0;padding:0;}
+.assertive{margin:0;padding:5px}
+.attach-img{width:100px !important;height:100px;margin-right:10px;}
+.weibolists-avatar{width:34px;height:34px;top:0.625rem !important;left:0.8rem !important}
+.col-width-100{width:120px !important;height:120px; flex: inherit;}
+.smilies{width:20px  !important;height:20px;}
+.api_source{width:100%; background: #eee;margin-top:10px;padding-left: 10px}
+.api_source .havimg{height:120px;padding-top:10px}
+.api_source img{width: 100px  !important;height:100px;float:left;}
+.api_source h2{padding:10px;padding-top:5px;padding-bottom:0px;line-height: 0px !important;}
+.api_source h2 em{color:#9E9E9E;font-size:0.6rem; margin-left:10px;}
+.weibotext{ padding-left:0.8rem;padding-right:0.8rem;}
+
+/*
+ */
+.weibolist{font-size:.9375rem !important;font:inherit !important;}
+.weibolist a{color:#0096E6; text-decoration: none;}
+.weibolist h2{color:#333;font-size:.9375rem !important;font:inherit !important;}
+.weibolist p{color:#929292 !important;font-size:.855rem !important;line-height: 1.2rem;}
+.weibolist .item-avatar{padding-left:60px;padding-top:15px;min-height: 42px; padding-bottom: 0px;}
+.weibolist .item-image{border-top:none;border-color:#eee}
+.weibolist .item-image .text{line-height: 1.35rem;font-size:1rem  !important;color:#333 !important; white-space: normal !important;}
+.weibolist .action-ion{ text-align: center;color:#929292}
+.weibolist .action-ion div{border-right:1px solid #eee;font-size:0.8rem;padding:5px;line-height: 0.8rem;}
+.weibolist .action-ion div:last-child{border:none}
+.weibolist .action-ion i{font-size:1.1rem;padding-right:5px}
+
+.api_source_content{padding-left:10px;padding-right:10px;margin-top:5px;font-size:1rem  !important;color:gray  !important;line-height: 1rem !important; -webkit-line-clamp:4;
+  -webkit-box-orient:vertical;display:-webkit-box;word-break:break-all;white-space:normal !important}
+.transpond_data_content{padding:10px;padding-top:0}
+
+
+/*个人中心*/
+.profileheader{width:100%;height:270px;}
+.profileheader .img{position: absolute;top:0px;width:100%;z-index:-1;background:url(../img/myimgdefault.jpg) no-repeat ; height:270px;-webkit-filter: blur(0px);-moz-filter: blur(10px);-ms-filter: blur(10px);filter: blur(10px);}
+.profileheader .profileavatar{ z-index:999;width:60px;padding-top: 50px;margin:0 auto;}
+.profileheader .profileavatar img{border-radius: 100%;width:60px;height:60px;margin: 0 auto}
+.profileheader .h2{ text-align: center;color:#fff;margin-top:5px;font-size:1.2rem}
+.followdata{border-top:1px solid rgba(247, 242, 242, 0.7); text-align: center;width:80%;margin:0 auto;color:#fff;margin-top:20px}
+.followdata .row{padding: 0;}
+.followdata .col{border-right:1px solid rgba(247, 242, 242, 0.7); }
+.followdata .col:last-child{border:none}
+.followdata .col p{margin:0;line-height: .7rem;font-size:0.7rem;padding-top:15px; vertical-align: bottom;}
+.followdata .col p:first-child{font-weight: 800;}

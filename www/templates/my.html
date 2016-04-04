@@ -1,0 +1,82 @@
+<ion-view view-title="我的空间">	
+     <ion-content>
+     	<div class="profileheader">
+     		<div class="img"></div>
+     		<div class="profileavatar"><img ng-src={{user.avatar}}</div>
+     	</div>
+       <div class="h2">@{{user.uname}}</div>
+       <div class="followdata">
+       	  <div class="row">
+       	  	<div class="col col-33">
+       	  		<p>{{userinfo.follower_count}}</p>
+       	  		<p>粉丝</p>
+       	  	</div>
+       	  	<div class="col col-33">
+       	  		<p>{{userinfo.following_count}}</p>
+       	  		<p>关注</p>
+       	  	</div>
+       	  	<div class="col col-33">
+       	  		<p>{{userinfo.weibo_count}}</p>
+       	  		<p>分享</p>
+       	  	</div>
+       	  </div>
+       </div>
+       
+     </div>
+     <div style="">
+       <div class="list card weibolist" ng-repeat="data in weibolists">
+
+        <div class="item item-avatar">
+          <img ng-src="{{ data.user_info.avatar.avatar_middle }}" class="weibolists-avatar">
+          <h2>{{ data.user_info.uname }}&nbsp;<img ng-src="{{data.user_gicon.user_group_icon_url}}" style="vertical-align: bottom;"></h2>
+          <p>{{data.ctime}}  来自{{data.from}}</p>
+        </div>
+
+        <div class="item item-image" style="text-align: left;">
+        	<p ng-bind-html="data.content" style="padding-bottom: 5px" class="text weibotext"></p>
+        	
+        	
+        	<div class="img row" style="padding:0;padding-left:10px"  ng-if="data.attach_info[0].attach_small">
+        		 <img ng-src="{{img.attach_small}}"  ng-if="img.attach_small" class="col col-width-100" ng-repeat="img in data.attach_info">
+        	</div>
+        	
+        	<div class="api_source" ng-if="data.api_source.title">
+        		<div class="havimg" style="padding:10px" ng-if="data.api_source.pic_url_small">        		   
+        		 	  <img ng-src="{{data.api_source.pic_url_small}}"   class="api_source_img">        		  
+        		      <h2  class="api_source_p">{{data.api_source.title}}</h2>
+        		      <p  class="api_source_content">{{data.api_source.content}}</p>
+        	    </div>
+        	    <div class="" style="padding:10px;padding-left:0"  ng-if="!data.api_source.pic_url_small"> 
+        	    	      <h2  class="api_source_p">{{data.api_source.title}}</h2>
+        		      <p  class="api_source_content">{{data.api_source.content}}</p>
+        	    </div>
+        	</div>
+        	
+        	
+        	
+        	<div class="api_source" ng-if="data.transpond_id">
+        		<div class="havimg" ng-if="data.transpond_data.attach">        		   
+        		 	  <img ng-src="{{data.transpond_data.attach[0].attach_middle_box}}"   class="api_source_img">        		  
+        		      <h2  class="api_source_p" style="font-size:1rem;color:#333">{{data.transpond_data.uname}}<em>{{data.transpond_data.ctime}}</em></h2>
+        		      <p  class="api_source_content">{{data.transpond_data.content}}</p>
+        	    </div>
+        	    <div style="padding:10px" ng-if="!data.transpond_data.attach"> 
+        		      <h2  class="api_source_p" style="font-size:1rem;color:#333">{{data.transpond_data.uname}}<em>{{data.transpond_data.ctime}}</em></h2>        	    	      <h2  class="api_source_p">{{data.api_source.title}}</h2>
+        		      <p  class="transpond_data_content" style="white-space: normal;p">{{data.transpond_data.content}}</p>
+        	    </div>
+        	</div>
+        	
+        	
+        	
+          
+        </div>
+
+        <div class="row action-ion">
+          <div class="col col-33"><i class="ion ion-arrow-swap"></i><em ng-if="(data.repost_count==0)">转发</em><em ng-if="(data.repost_count>0)">{{data.repost_count}}</em></div>
+          <div class="col col-33"><i class="ion ion-ios-chatbubble-outline"></i><em ng-if="(data.comment_count==0)">评论</em><em ng-if="(data.comment_count>0)">{{data.comment_count}}</em></div>   
+          <div class="col col-33"><i class="ion ion-ios-heart-outline"></i><em ng-if="(data.digg_count==0)">赞</em><em ng-if="(data.digg_count>0)">{{data.digg_count}}</em></div>   
+        </div>
+
+      </div>
+     </ion-content>	
+</ion-view>	

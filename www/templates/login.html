@@ -1,0 +1,22 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">登录</h1>
+  </ion-header-bar>
+  <ion-content style="background: #fff;">
+  	<div class="loginBg"></div>
+  	<div class="loginBgtext">若要使用Touch ID，请登录后前往安全中心设置</div>
+    <form ng-submit="doLogin()">
+      <div class="list" style="padding:20px">
+        <label class="item item-input" style="border-top:none;border-left:none;border-right:none">
+          <input type="text" ng-model="loginData.username" placeholder="请输入Email">
+        </label>
+        <label class="item item-input" style="border-left:none;border-right:none">
+          <input type="password" ng-model="loginData.password" placeholder="请输入密码">
+        </label>
+        <label class="item" style="border-left:none;border-right:none;border-bottom:none">
+          <button class="button button-block button-positive" type="button" ng-click="doLogin()">登录</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
